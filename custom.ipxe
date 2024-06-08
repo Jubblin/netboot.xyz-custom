@@ -3,10 +3,6 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
-chain https://pxe.factory.talos.dev/pxe/1e0a2a631539153bf8b98b10a5d66fd5bd553a62e2b992c243fc12016e90a628/1.7.4/metal-amd64
-goto custom_exit
-
-:custom_exit
-exit 0
+kernel https://pxe.factory.talos.dev/image/1e0a2a631539153bf8b98b10a5d66fd5bd553a62e2b992c243fc12016e90a628/v1.7.4/kernel-amd64 talos.platform=metal console=ttyS0 console=tty0 init_on_alloc=1 slab_nomerge pti=on consoleblank=0 nvme_core.io_timeout=4294967295 printk.devkmsg=on ima_template=ima-ng ima_appraise=fix ima_hash=sha512 siderolink.api=https://omni.ad.bonkie.net:8090/?grpc_tunnel=false&jointoken=xcbXflnpN9dS4D1T5KzKtWob8LLWvHVL3KzqHOgqIVO talos.events.sink=[fdae:41e4:649b:9303::1]:8091 talos.logging.kernel=tcp://[fdae:41e4:649b:9303::1]:8092
+initrd https://pxe.factory.talos.dev/image/1e0a2a631539153bf8b98b10a5d66fd5bd553a62e2b992c243fc12016e90a628/v1.7.4/initramfs-amd64.xz
+boot
