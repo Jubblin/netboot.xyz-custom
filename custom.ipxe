@@ -5,7 +5,7 @@
 
 :start
 echo Hello world!
-sleep 10
+chain https://pxe.factory.talos.dev/pxe/1e0a2a631539153bf8b98b10a5d66fd5bd553a62e2b992c243fc12016e90a628/1.7.4/metal-amd64
 goto custom_exit
 
 :custom_exit
